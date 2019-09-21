@@ -56,7 +56,8 @@
         "provider": "github",
         "owner": "L1NNA",
         "repo": "L1NNA-TTTH",
-        "vPrefixedTagName": false
+        "vPrefixedTagName": false,
+        "releaseType": "release"
       }
     ]
   },
