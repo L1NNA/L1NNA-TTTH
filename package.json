@@ -51,7 +51,7 @@
         "default"
       ]
     },
-     "publish": [ "never" ]
+     "publish": [ "always" ]
   },
   "devDependencies": {
     "electron": "^6.0.7",
