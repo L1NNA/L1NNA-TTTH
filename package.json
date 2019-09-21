@@ -36,10 +36,8 @@
       ]
     },
     "linux": {
-      "target": [
-        "AppImage",
-        "deb"
-      ]
+      "target": "deb",
+      "artifactName": "${productName}-${version}-linux-${arch}.${ext}"
     },
     "win": {
       "target": "portable",
@@ -52,7 +50,8 @@
       "target": [
         "default"
       ]
-    }
+    },
+     "publish": [ "never" ]
   },
   "devDependencies": {
     "electron": "^6.0.7",
