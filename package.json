@@ -44,7 +44,6 @@
     "win": {
       "target": "portable",
       "icon": "icons/l1nna.ico",
-      "publisherName": "L1NNA Lab",
       "artifactName": "${productName}-${version}-win-${arch}.${ext}"
     },
     "mac": {
