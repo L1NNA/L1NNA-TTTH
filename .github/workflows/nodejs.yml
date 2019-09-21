@@ -7,7 +7,7 @@ jobs:
 
     strategy:
       matrix:
-        platform: [ubuntu-latest]
+        platform: [macos-latest, windows-latest, ubuntu-latest]
         node-version: [10.x]
         
     runs-on: ${{ matrix.platform }}
@@ -26,3 +26,4 @@ jobs:
         npm run dist
       env:
         CI: true
+        GH_TOKEN:  ${{ secrets.PAC }}
