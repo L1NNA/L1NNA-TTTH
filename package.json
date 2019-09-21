@@ -53,15 +53,7 @@
       "target": [
         "default"
       ]
-    },
-    "publish": [
-      {
-        "provider": "github",
-        "owner": "L1NNA",
-        "repo": "L1NNA-TTTH",
-        "vPrefixedTagName": false
-      }
-    ]
+    }
   },
   "devDependencies": {
     "electron": "^6.0.7",
