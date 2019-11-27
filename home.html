@@ -81,6 +81,11 @@
             -webkit-app-region: no-drag;
         }
 
+        img.nav-tabs-favicon.nav-icons{
+            height:35px;
+            width:auto;
+        }
+
         img#logo {
             width: 50px;
             position: absolute;
@@ -95,7 +100,7 @@
             top: 35px;
             right: 0px;
             background-color: white;
-             border: 1px solid orange;
+            border: 1px solid orange;
         }
 
         .electronSearchText-input {
@@ -104,8 +109,8 @@
 
         .electronSearchText-count {
             font-family: sans-serif;
-            padding:5px;
-            font-size:11pt;
+            padding: 5px;
+            font-size: 11pt;
         }
 
         .electronSearchText-visible {
@@ -153,10 +158,17 @@
             })
             window.enav = enav;
 
-            enav.newTab('https://www.gmail.com', { 'id': 'gmail', 'title': '', 'icon': 'icons/gmail.png' })
-            enav.newTab('https://calendar.google.com/calendar/r', { 'id': 'gcalendar', 'title': '', 'icon': 'icons/calendar.png' })
-            enav.newTab('https://freedcamp.com/dashboard', { 'id': 'freedcamp', 'title': '', 'icon': 'icons/freedcamp.png' })
-            enav.newTab('http://l1nna.slack.com', { 'id': 'slack', 'title': '', 'icon': 'icons/slack.ico' })
+            settings = window.settings;
+            console.log(settings);
+            for (var ind in settings) {
+                var setting = settings[ind]
+                enav.newTab(setting.url, setting.conf);
+            }
+
+            // enav.newTab('https://www.gmail.com', { 'id': 'gmail', 'title': '', 'icon': 'icons/gmail.png' })
+            // enav.newTab('https://calendar.google.com/calendar/r', { 'id': 'gcalendar', 'title': '', 'icon': 'icons/calendar.png' })
+            // enav.newTab('https://freedcamp.com/dashboard', { 'id': 'freedcamp', 'title': '', 'icon': 'icons/freedcamp.png' })
+            // enav.newTab('http://l1nna.slack.com', { 'id': 'slack', 'title': '', 'icon': 'icons/slack.ico' })
 
             $('webview').on("new-window", (res) => {
                 window.open_shell(res.originalEvent.url);
@@ -177,7 +189,7 @@
                         box.removeClass('electronSearchText-visible')
                     else
                         box.addClass('electronSearchText-visible')
-                        box.find('input').focus()
+                    box.find('input').focus()
                 }
 
             }

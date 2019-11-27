@@ -1,4 +1,4 @@
-const { getCurrentWindow, globalShortcut, ipcRenderer } = require('electron').remote;
+const { getCurrentWindow, globalShortcut, ipcRenderer, app } = require('electron').remote;
 const ElectronSearchText = require('electron-search-text');
 
 var shell = require('electron').shell;
@@ -11,7 +11,7 @@ window.onload = () => {
         getCurrentWindow().close();
     });
 
-    $('#logo').click(function(){
+    $('#logo').click(function () {
         shell.openExternal('https://l1nna.com');
     });
 
@@ -49,6 +49,22 @@ window.onload = () => {
         search.openSearchWindow();
     };
 
+    var basepath = app.getPath('home');
+    console.log(basepath);
+    const fs = require('fs');
+    try {
+        var data = fs.readFileSync(basepath + '/l1nna-settings.json');
+        let settings = JSON.parse(data);
+        window.settings = settings
+    } catch (err) {
+        console.log(err);
+         window.settings = [
+                {
+                    'url': 'https://www.gmail.com',
+                    'conf': { 'id': 'gmail', 'title': '', 'icon': 'icons/gmail.png' }
+                }
+            ];
+    }
 
 
     console.log("loaded");
