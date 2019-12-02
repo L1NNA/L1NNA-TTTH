@@ -43,14 +43,6 @@ Configuration file is in ~/l1nna-settings.json
         }
     },
      {
-        "url": "http://g33kw33kvi.slack.com",
-        "conf": {
-            "id": "slack-geekweek",
-            "title": "",
-            "icon": "https://g33kw33k.ca/2019/assets/img/beaver_mini.png"
-        }
-    },
-     {
         "url": "http://github.com",
         "conf": {
             "id": "github",
