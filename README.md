@@ -4,6 +4,8 @@
 
 Unified workspace, so I don't need to find where the hell they are among all the chrome tabs/windows.
 
+[warning: only include the site that you can trust. NodeJS after loading is disabled. But sill possible local XSS attack.]
+
 ![](ui.jpg)
 
 Configuration file is in ~/l1nna-settings.json
